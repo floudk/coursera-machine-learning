@@ -27,3 +27,11 @@ $b=b-\alpha \frac{\partial}{\\partial b} J(w,b)$
 Baed on matrix calculation, we can also find the optimal W and B by solving the normal equation, but this method only works in linear regression, and it is not efficient when the number of features is large.
 
 Conversely, gradient descent is a more general method, and it is also more efficient when the number of features is large.
+
+## feature scaling
+
+In some cases, some paramaters may too big or small, it is recommanded to re-scale them in the same reange, so that the gradient map can be a circle, which can lead to faster convergence.
+
+This is kind of nomalization:
+- mean normalizaion: $x = \frac{x - \mu}{b-a}$
+- Z-score normalization: $x = \frac{x-\mu}{\sigma}$
