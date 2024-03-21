@@ -44,3 +44,6 @@ Using **intuition** to design new features, by transforming or combining origina
 
 Use square or higher order of feature to regression.
 Notice that in this case, feature scaling may use square root or so to scale in the almost same range.
+
+# Classification
+
