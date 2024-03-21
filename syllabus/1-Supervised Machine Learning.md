@@ -35,3 +35,12 @@ In some cases, some paramaters may too big or small, it is recommanded to re-sca
 This is kind of nomalization:
 - mean normalizaion: $x = \frac{x - \mu}{b-a}$
 - Z-score normalization: $x = \frac{x-\mu}{\sigma}$
+
+##  feature engineering
+
+Using **intuition** to design new features, by transforming or combining original features.
+
+## Polynomial regression
+
+Use square or higher order of feature to regression.
+Notice that in this case, feature scaling may use square root or so to scale in the almost same range.
