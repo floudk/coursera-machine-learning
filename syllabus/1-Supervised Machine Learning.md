@@ -71,3 +71,11 @@ To mitigate overfitting, there are several methods:
 - add more training data: this is the most effective way to mitigate overfitting, but it is not always possible.
 - reduce the number of features: this is also effective, but it may lose some information.
 - regularization: basically, add a penalty term to the cost function, to make the model simpler.
+    A typical method can be $J(w,b)_{reg} = J(w,b) + \frac{\lambda}{2m} \sum_{j=1}^{n} w_j^2$, where $\lambda$ is the regularization parameter, and $w_j$ is the j-th parameter of the model. As we can see, this penalty term will make the sum of the square of the parameters smaller, which will make the model simpler.
+
+## Feature Mapping
+
+Feature meapping is used to add feature dimensions to better fit complicited boundary.
+When data can not be linearly diveded, feature mapping can map the data into higher-dimension space where the data can be linearly diveded.
+
+Feature mapping allows us to build more complex models, but it also increases the risk of overfitting.
