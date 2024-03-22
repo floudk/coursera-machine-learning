@@ -47,3 +47,27 @@ Notice that in this case, feature scaling may use square root or so to scale in 
 
 # Classification
 
+## Logistic regression
+
+$y = \frac{1}{1+e^{-z}}$ used to predict the probability of the positive class.
+
+**Desion boundary** is needed to be a threshold to justify whether 0/1, which may be non-linear.
+
+## Cost function
+
+Cost function for logistic regression is different from linear regression, because the logistic regression is not a convex function, so the cost function is not a convex function.
+
+$$ J(W,B) = -\frac{1}{m} \sum_{i=1}^{m} [y^{(i)} \log(\hat{y}^{(i)}) + (1-y^{(i)}) \log(1-\hat{y}^{(i)})] $$
+
+## Overfitting
+
+- Underfitting: high bias, low variance
+- Overfitting: low bias, high variance
+
+high bias means the model cannot fit the training set well.  
+high variance means the model is too sensitive to the training set, that is, a small change in the training set will lead to a large change in the model.
+
+To mitigate overfitting, there are several methods:
+- add more training data: this is the most effective way to mitigate overfitting, but it is not always possible.
+- reduce the number of features: this is also effective, but it may lose some information.
+- regularization: basically, add a penalty term to the cost function, to make the model simpler.
