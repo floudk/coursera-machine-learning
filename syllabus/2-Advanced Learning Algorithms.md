@@ -127,3 +127,52 @@ F1 score is the **harmonic mean** of precision and recall, and it is a good way 
 
 ## decision trees
 
+The learning process in decision trees are about the following questions:
+
+1. How to choose features to split on each node?
+- For **maximize purity**, that is, for nodes closer to root nodes, the feature can gain hign purity/information gain. And this is a recursive algorithm to build trees.
+
+2. When to stop splitting?
+- When a node is 100% one class
+- When splitting a node will result in the tree excedinig a maximum depth
+- When improvements in purity score are below a threshold
+- When number of examples in a node is below a threshold
+
+`Purity Quantity`, we can define impurity: Let $p_1=$ fraction of examples that are not some classfication(two-classfication case), then impurity $H(p_1) = -p_1 \log_2(p_1) - p_0\log_2(p_0)$
+
+use **one-hot encoding**: use k binary features to replace a k-value `categorical feature`.
+
+use threshold to split `Continuous valued features`to 2-cases, that is, also kind of binary feature.
+
+### Regression Trees
+
+For regression task with decision tree, what we want to is predict a number, so when spliting, we want to all objects in a class is as close as possible, that is, **variance**.
+And define impurity with variance, we can do exactly what classification task does.
+
+### Tree ensembles
+
+decision trees are sentitive to small changes in dataset, so it is better to train a lot of trees together, that is **ensemble tree**, and use their predictions vote for a final one.
+
+*Samping with replacement* means contructing trees with sampling and replacing these into the whole dataset before next sampling.
+
+**Random forest** algorithm: not only select sampling in dataset, but also use sampling in features, that is use subset of features to train for a more robust prediction.
+
+### Boosted trees
+
+Intuition: instead of sampling with equal probability, make it more likely to pick misclassified examples from previously trained trees.
+
+**XGBoost** means eXtream Gradient Boosting, is an open source fast efficient implementation of boosted trees, which has a good choice of default splitting criteria and criteria for when to stop splitting and built=in regularization.
+
+### Decision Tree vs Neural Networks
+
+Decision Tree:
+- work well on tabular(structured) data
+- Not suitable for unstructured data
+- Fast
+- Small decision trees may be human interpretable
+
+### Neural Networks
+- work well on all types of data, including tabular and unstructured data.
+- may be slower than a decision tree.
+- work with transfer learning
+- easier to string together multiple neural networks.
